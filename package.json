@@ -1,0 +1,23 @@
+{
+  "name": "2020-khuthon-wyga",
+  "version": "1.0.0",
+  "description": "ㅍㄷㅍㄷ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FacerAin/2020-Khuthon-WYGA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FacerAin/2020-Khuthon-WYGA/issues"
+  },
+  "homepage": "https://github.com/FacerAin/2020-Khuthon-WYGA#readme",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "wallpaper": "^4.4.1"
+  }
+}
