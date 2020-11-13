@@ -71,12 +71,12 @@ const Problem = () => {
   }
   const onAnswer_B = (e) => {//B 정답을 제출했을 시
     console.log('B')
-    if (P_data['Answer'] == 'A') {
-      console.log('오답')
-      goFail()
-    } else {
+    if (P_data['Answer'] == 'B') {
       console.log('정답')
       goNextProblem();
+    } else {
+      console.log('오답')
+      goFail()
     }
   }
 
