@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) =>
     root: {
       textAlign: 'center',
       paddingTop: theme.spacing(4),
+      background: '#FFF44F'
     },
   })
 );

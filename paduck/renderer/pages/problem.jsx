@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) =>
       textAlign: 'center',
       padding: theme.spacing(4),
       flexGrow: 1,
+      background: '#FFF44F',
     },
     paper: {
       padding: theme.spacing(2),
