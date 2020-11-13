@@ -1,9 +1,3 @@
-//TODO: 종료 페이지 제작 <-
-//TODO: 문제 페이지 디자인 다듬기
-//TODO: 정답 표시는 어떻게?
-//TODO: 문제 데이터셋 양식 만들기
-//TODO: 인수인계 작업 (주석, 수정할 것 정리)
-
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
 import Head from 'next/head';
@@ -15,6 +9,12 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import ProblemCard from '../components/ProblemCard'
+/*
+TODO: 문제파일 작성
+임시 문제 파일임.
+실제 문제 제작은 따로 problem.json에 작성하여
+컴포넌트 시작시 불러올것
+*/
 let init_question = [{
   'No': 0, //Init Value
   'QuestionText': '자연어처리는 재미 없다.',
@@ -77,7 +77,7 @@ const Problem = () => {
 
 
 
-  const onAnswer_A = (e) => { //코드 개선 요망
+  const onAnswer_A = (e) => { //A 정답을 제출했을 시
     console.log('A')
     if (P_data['Answer'] == 'A') {
       console.log('정답')
@@ -87,7 +87,7 @@ const Problem = () => {
       goFail()
     }
   }
-  const onAnswer_B = (e) => {
+  const onAnswer_B = (e) => {//B 정답을 제출했을 시
     console.log('B')
     if (P_data['Answer'] == 'A') {
       console.log('오답')
@@ -98,10 +98,10 @@ const Problem = () => {
     }
   }
 
-  const goNextProblem = () => {
+  const goNextProblem = () => { //다음 문제로, 마지막 문제라면 success로 넘어감
     console.log(P_data.length)
     console.log(problemIdx)
-    if (problemList.length - 1<= problemIdx)//문제 종료
+    if (problemList.length - 1<= problemIdx)
     {
       console.log('문제 종료')
       Router.push('/success')
@@ -111,7 +111,7 @@ const Problem = () => {
 
   }
 
-  const goFail = () => {
+  const goFail = () => {//실패 fail 페이지로 넘어감
     console.log('실패')
     Router.push('/fail')
   }
