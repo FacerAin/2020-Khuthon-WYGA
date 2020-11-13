@@ -87,6 +87,14 @@ const setWallpaper = async(opsys, img_name) => {
 
   if(opsys != "Windows")
   {
+      if(isProd){
+          sh_path = path.join (AppPath ,'/app/app' ,bin);
+          img_path = path.join (AppPath, '/app/app/images', img_name)
+      }else{
+          sh_path = path.join (AppPath, '/renderer/public/' + bin);
+          img_path = path.join (AppPath,'/renderer/public/images/' + img_name )
+      }
+
       const str = 'wallpaper set '.concat(img_path);
       await childProcess.exec("cd "+sh_path);
       const stdout = await childProcess.exec(str)
@@ -104,7 +112,6 @@ const useStyles = makeStyles((theme) =>
     root: {
       textAlign: 'center',
       paddingTop: theme.spacing(4),
-      background: '#FFF44F'
     },
   })
 );
