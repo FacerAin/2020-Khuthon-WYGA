@@ -85,7 +85,7 @@ const setWallpaper = async(opsys, img_name) => {
   console.log(sh_path)
   console.log(img_path)
 
-  if(opsys != "Window")
+  if(opsys != "Windows")
   {
       const str = 'wallpaper set '.concat(img_path);
       await childProcess.exec("cd "+sh_path);
