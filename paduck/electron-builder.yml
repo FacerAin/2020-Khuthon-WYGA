@@ -1,0 +1,14 @@
+appId: com.example.nextron
+asar: false
+productName: Paduck
+copyright: Copyright © 2020 WYGA
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
+
