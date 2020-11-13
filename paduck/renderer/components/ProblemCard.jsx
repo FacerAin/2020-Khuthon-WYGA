@@ -11,11 +11,11 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     maxWidth: 300,
-    height: 'auto',
     margin: 'auto'
   },
-  media: {
-    height: 140,
+  img: {
+    height: 300,
+    objectFit: 'cover',
   },
 });
 /*
@@ -33,12 +33,12 @@ export default function ProblemCard({ onAnswer, name, Answer_txt, Answer_sub_txt
     <Card className={classes.root} >
       <CardActionArea  onClick={(e) => { onAnswer(e, name) }}>
         <CardMedia
-          className={classes.media}
+          className={classes.img}
           image={Img_src}
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography variant="h5" component="h2">
             {Answer_txt}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
