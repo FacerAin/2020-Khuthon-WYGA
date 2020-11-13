@@ -15,7 +15,11 @@ const useStyles = makeStyles((theme) =>
     root: {
       textAlign: 'center',
       paddingTop: theme.spacing(4),
+      background: 'linear-gradient(180deg, #FFF44F 30%, #FFFFFF 90%)',
     },
+    but: {
+      marginBottom: 10,
+    }
   })
 );
 
@@ -52,7 +56,7 @@ const Home = () => {
         <Typography gutterBottom>
           <Link href="/problem">문제 풀기</Link>
         </Typography>
-        <Button variant="contained" color="secondary" onClick={handleClick}>
+        <Button className={classes.but} variant="contained" color="secondary" onClick={handleClick}>
           주의사항
         </Button>
       </div>
