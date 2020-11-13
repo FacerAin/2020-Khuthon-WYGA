@@ -7,8 +7,8 @@
     "B_Answer_txt": "아니다",
     "B_Answer_sub_txt": "대충 같은건 아닌 것 같은데…?",
     "Answer": "B",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem0a.png",
+    "B_img_src": "../images/problem0b.png"
   },
   {
     "No": 1,
@@ -18,8 +18,8 @@
     "B_Answer_txt": "아니다",
     "B_Answer_sub_txt": "아녀... 사람 안 같은디...",
     "Answer": "A",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem1a.png",
+    "B_img_src": "../images/problem1b.png"
   },
   {
     "No": 2,
@@ -29,8 +29,8 @@
     "B_Answer_txt": "SPAM",
     "B_Answer_sub_txt": "SLAM? SPAM아님??",
     "Answer": "A",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem2a.png",
+    "B_img_src": "../images/problem2b.png"
   },
   {
     "No": 3,
@@ -40,8 +40,8 @@
     "B_Answer_txt": "아니다",
     "B_Answer_sub_txt": "컴퓨터라면 답을 알아서 맞출 줄 알아야 한다.",
     "Answer": "B",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem3a.png",
+    "B_img_src": "../images/problem3b.png"
   },
   {
     "No": 4,
@@ -51,8 +51,8 @@
     "B_Answer_txt": "Convolutional Neural Network",
     "B_Answer_sub_txt": "인공신경망이란, 인간의 뉴런 구조를 본떠 만든 기계학습 모델이다. 인간의 시신경 구조를 모방해 만든 인공신경망 모델을 CNN이라 한다 ",
     "Answer": "B",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem4a.png",
+    "B_img_src": "../images/problem4b.png"
   },
   {
     "No": 5,
@@ -62,8 +62,8 @@
     "B_Answer_txt": "sigmoid 활성함수는 불연속 함수이다.",
     "B_Answer_sub_txt": "sigmoid 그래프가 뭐더라…?",
     "Answer": "A",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem5a.png",
+    "B_img_src": "../images/problem5b.png"
   },
   {
     "No": 6,
@@ -73,8 +73,8 @@
     "B_Answer_txt": "q가 거짓이면 p가 거짓이다.",
     "B_Answer_sub_txt": "기억나질 않아요 ㅜㅜ",
     "Answer":"B",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem6a.png",
+    "B_img_src": "../images/problem6b.png"
   },
   {
     "No": 7,
@@ -84,8 +84,8 @@
     "B_Answer_txt": "형태분석",
     "B_Answer_sub_txt": "문법모형이면 형태인가…?",
     "Answer": "B",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem7a.png",
+    "B_img_src": "../images/problem7b.png"
   },
   {
     "No": 8,
@@ -95,8 +95,8 @@
     "B_Answer_txt": "가중치 조정 할 때 델타 규칙에 따라 학습한다.",
     "B_Answer_sub_txt": "그런데 델타 규칙이 뭐였지…?.",
     "Answer": "B",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem8a.png",
+    "B_img_src": "../images/problem8b.png"
   },
   {
     "No": 9,
@@ -106,7 +106,7 @@
     "B_Answer_txt": "Avian Influenza",
     "B_Answer_sub_txt": "조류독감!",
     "Answer": "X",
-    "A_img_src": "",
-    "B_img_src": ""
+    "A_img_src": "../images/problem9a.png",
+    "B_img_src": "../images/problem9b.png"
   }
 ]
