@@ -5,15 +5,12 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from '../components/Link';
 import childProcess from 'child_process'
-import pify from 'pify'
 //https://medium.com/the-z/the-making-of-a-wallpaper-changing-app-with-electron-and-vue-js-606e66b2a929
-import wallpaper from 'wallpaper'
-import fs from 'fs'
-import hazardous from 'hazardous'
 import path from 'path'
-import { rootPath } from 'electron-root-path';
-
 import electron from'electron';
+const isProd = process.env.NODE_ENV === 'production';
+
+const remote = electron.remote || false;
 
 
 /*
@@ -64,31 +61,34 @@ const stdout = await childProcess.execFile('./renderer/public/win/wallpaper.exe'
 
 */
 
-/*
-const setWallpaper = async(opsys, img_src) => {
-  const bin = '../lib/win/wallpaper.exe'
-  if(opsys != "Windows"){
-    const bin = '../lib/mac/wallpaper'
-    console.log(opsys)
+//img_src에는 images 폴더 안의 이름만 작성
+// Ex) wallpaper.jpg
+const setWallpaper = async(opsys, img_name) => {
+  console.log(opsys)
+  let bin = '/win/wallpaper.exe'
+  if(opsys != "Windows"){ //For Mac
+    bin = '/mac/wallpaper'
   }
-  wallpaper.set('/images/psyduck-icon-2.jpg')
-  console.log(rootPath)
-  const configDir =  electron.app.getPath('userData');
-  console.log(configDir);
-  
-  const stdout = await childProcess.execFile(bin, [img_src])
-  console.log(stdout);
-  
- //const stdout = childProcess.execFileSync('./paduck/renderer/lib/win/wallpaper.exe', ['./paduck/renderer/public/images/wallpaper.jpg'])
- const sh_path = path.join (__dirname, '/renderer/public/win/wallpaper.exe');
- console.log(sh_path)
- console.log(__dirname)
- console.log(__filename)
+  let sh_path = ''
+  let img_path = ''
+  const AppPath = electron.remote.app.getAppPath()
+  console.log(isProd)
+  if(isProd){
+    sh_path = path.join (AppPath ,'/app' ,bin);
+    img_path = path.join (AppPath, '/app/images', img_name)
+  }else{
+    sh_path = path.join (AppPath, '/renderer/public/' + bin);
+    img_path = path.join (AppPath,'/renderer/public/images/' + img_name )
 
- //const stdout = await childProcess.execFile('/win/wallpaper.exe', ['/images/wallpaper.jpg'])
- //console.log(stdout)
+  }
+
+  console.log(sh_path)
+  console.log(img_path)
+
+ const stdout = await childProcess.execFile(sh_path, [img_path])
+ console.log(stdout)
 }
-*/
+
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
@@ -110,10 +110,10 @@ if (opsys == "darwin") { //운영체제 별 분기 처리 코드 활용할 것
 } else if (opsys == "linux") {
     opsys = "Linux";
 }
-console.log(opsys)
+setWallpaper(opsys, 'wallpaper.jpg')
+
 //createProc()
 //setWallpaper(opsys, '../public/images/wallpaper.jpg')
-
   }, [])
   return (
     <React.Fragment>

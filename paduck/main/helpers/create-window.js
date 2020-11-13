@@ -70,6 +70,7 @@ export default function createWindow(windowName, options) {
     ...options,
     ...state,
     webPreferences: {
+      enableRemoteModule: true,
       nodeIntegration: true,
       ...options.webPreferences,
     },
