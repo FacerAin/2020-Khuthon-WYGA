@@ -73,20 +73,30 @@ const setWallpaper = async(opsys, img_name) => {
   let img_path = ''
   const AppPath = electron.remote.app.getAppPath()
   console.log(isProd)
+
   if(isProd){
     sh_path = path.join (AppPath ,'/app' ,bin);
     img_path = path.join (AppPath, '/app/images', img_name)
   }else{
     sh_path = path.join (AppPath, '/renderer/public/' + bin);
     img_path = path.join (AppPath,'/renderer/public/images/' + img_name )
-
   }
 
   console.log(sh_path)
   console.log(img_path)
 
- const stdout = await childProcess.execFile(sh_path, [img_path])
- console.log(stdout)
+  if(opsys != "Window")
+  {
+      const str = 'wallpaper set '.concat(img_path);
+      await childProcess.exec("cd "+sh_path);
+      const stdout = await childProcess.exec(str)
+      console.log(stdout)
+  }
+  else
+  {
+      const stdout = await childProcess.execFile(sh_path, [img_path])
+      console.log(stdout)
+  }
 }
 
 const useStyles = makeStyles((theme) =>
@@ -94,6 +104,7 @@ const useStyles = makeStyles((theme) =>
     root: {
       textAlign: 'center',
       paddingTop: theme.spacing(4),
+      background: '#FFF44F'
     },
   })
 );
