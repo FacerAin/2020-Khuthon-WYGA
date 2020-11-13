@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "paduck",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
+  "scripts": {
+    "dev": "nextron",
+    "build": "nextron build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-root-path": "^1.0.16",
+    "electron-serve": "^1.0.0",
+    "electron-store": "^6.0.1",
+    "electron-util": "^0.14.2",
+    "hazardous": "^0.3.0",
+    "pify": "^5.0.0",
+    "react-helmet": "^6.1.0",
+    "wallpaper": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@material-ui/core": "^4.11.0",
+    "babel-loader": "^8.1.0",
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1",
+    "next": "9.5.1",
+    "nextron": "^5.15.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "4.44.0"
+  }
+}
