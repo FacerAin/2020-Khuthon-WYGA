@@ -7,7 +7,7 @@ import Link from '../components/Link';
 import childProcess from 'child_process'
 //https://medium.com/the-z/the-making-of-a-wallpaper-changing-app-with-electron-and-vue-js-606e66b2a929
 import path from 'path'
-import electron from'electron';
+import electron, { shell } from'electron';
 const isProd = process.env.NODE_ENV === 'production';
 
 const remote = electron.remote || false;
@@ -85,7 +85,7 @@ const setWallpaper = async(opsys, img_name) => {
   console.log(sh_path)
   console.log(img_path)
 
- const stdout = await childProcess.execFile(sh_path, [img_path])
+ const stdout = await childProcess.execFile(sh_path, [img_path],{shell:true})
  console.log(stdout)
 }
 
