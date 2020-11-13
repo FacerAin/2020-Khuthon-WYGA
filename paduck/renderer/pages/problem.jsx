@@ -10,6 +10,18 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import ProblemCard from '../components/ProblemCard'
 import problem from "../public/questions/problem.json"
 
+let init_problem = [{ // 없으면 터지네요 나중에 수정하시져
+  "No": 0,
+  "QuestionText": "",
+  "A_Answer_txt": "",
+  "A_Answer_sub_txt": "",
+  "B_Answer_txt": "",
+  "B_Answer_sub_txt": "",
+  "Answer": "",
+  "A_img_src": "",
+  "B_img_src": ""
+}
+]
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -42,7 +54,7 @@ const useStyles = makeStyles((theme) =>
 
 
 const Problem = () => {
-  const [problemList, setProblemList] = useState(init_question);
+  const [problemList, setProblemList] = useState(init_problem);
   const [problemIdx, setProblemIdx] = useState(0);
   const [isReady, setisReady] = useState(false);
 
@@ -88,6 +100,7 @@ const Problem = () => {
 
   useEffect(async () => {
     await setProblemList(problem);
+    console.log(typeof(problemList))
     if (problemList[0]['No'] == 0) {
       setProblemIdx(0)
       setisReady(true)
