@@ -48,7 +48,7 @@ const Home = () => {
         <Typography variant="subtitle1" gutterBottom>
           AI 문제를 풀어봅시다.
         </Typography>
-        <img src="/images/psyduck-icon-2.jpg" />
+        <img height={300} width={300} src="/images/psyduck-icon-2.jpg" />
         <Typography gutterBottom>
           <Link href="/problem">문제 풀기</Link>
         </Typography>

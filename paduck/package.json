@@ -15,6 +15,7 @@
     "electron-serve": "^1.0.0",
     "electron-store": "^6.0.1",
     "electron-util": "^0.14.2",
+    "fs": "0.0.1-security",
     "hazardous": "^0.3.0",
     "pify": "^5.0.0",
     "react-helmet": "^6.1.0",

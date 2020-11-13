@@ -7,38 +7,21 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
 import ProblemCard from '../components/ProblemCard'
-/*
-TODO: 문제파일 작성
-임시 문제 파일임.
-실제 문제 제작은 따로 problem.json에 작성하여
-컴포넌트 시작시 불러올것
-*/
-let init_question = [{
-  'No': 0, //Init Value
-  'QuestionText': '자연어처리는 재미 없다.',
-  'A_Answer_txt': '맞다',
-  'A_Answer_sub_txt': '왜냐하면 맞기 때문이다.',
-  'B_Answer_txt': '아니다',
-  'B_Answer_sub_txt': '왜냐하면 아니기 때문이다.',
-  'Answer': 'A',
-  'A_img_src': '',
-  'B_img_src': '',
-},
-{
-  'No': 1, //Init Value
-  'QuestionText': '자연어처리는 재미 있다.',
-  'A_Answer_txt': '맞다',
-  'A_Answer_sub_txt': '왜냐하면 맞기 때문이다.',
-  'B_Answer_txt': '아니다',
-  'B_Answer_sub_txt': '왜냐하면 아니기 때문이다.',
-  'Answer': 'A',
-  'A_img_src': '',
-  'B_img_src': '',
+import problem from "../public/questions/problem.json"
+
+let init_problem = [{ // 없으면 터지네요 나중에 수정하시져
+  "No": 0,
+  "QuestionText": "",
+  "A_Answer_txt": "",
+  "A_Answer_sub_txt": "",
+  "B_Answer_txt": "",
+  "B_Answer_sub_txt": "",
+  "Answer": "",
+  "A_img_src": "",
+  "B_img_src": ""
 }
 ]
-
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -71,10 +54,9 @@ const useStyles = makeStyles((theme) =>
 
 
 const Problem = () => {
-  const [problemList, setProblemList] = useState(init_question);
+  const [problemList, setProblemList] = useState(init_problem);
   const [problemIdx, setProblemIdx] = useState(0);
   const [isReady, setisReady] = useState(false);
-
 
 
   const onAnswer_A = (e) => { //A 정답을 제출했을 시
@@ -108,18 +90,18 @@ const Problem = () => {
     } else {
       setProblemIdx(problemIdx + 1)
     }
-
   }
 
   const goFail = () => {//실패 fail 페이지로 넘어감
     console.log('실패')
     Router.push('/fail')
   }
-  useEffect(() => {
-    //Init Problem State
+
+
+  useEffect(async () => {
+    await setProblemList(problem);
+    console.log(typeof(problemList))
     if (problemList[0]['No'] == 0) {
-      //For Testing
-      setProblemList(init_question);
       setProblemIdx(0)
       setisReady(true)
     }
