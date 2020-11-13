@@ -9,7 +9,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
 import Link from '../components/Link';
-
+//TODO Mac 버전과 Win 버전 분리 필요
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
