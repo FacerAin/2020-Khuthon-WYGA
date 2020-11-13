@@ -12,7 +12,6 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const remote = electron.remote || false;
 
-
 /*
 let createProc = () => {
   console.log(process.execPath)
@@ -67,7 +66,7 @@ const setWallpaper = async(opsys, img_name) => {
   console.log(opsys)
   let bin = '/win/wallpaper.exe'
   if(opsys != "Windows"){ //For Mac
-    bin = '/mac/wallpaper'
+    bin = '/mac'
   }
   let sh_path = ''
   let img_path = ''
@@ -82,14 +81,11 @@ const setWallpaper = async(opsys, img_name) => {
     img_path = path.join (AppPath,'/renderer/public/images/' + img_name )
   }
 
-  console.log(sh_path)
-  console.log(img_path)
-
   if(opsys != "Windows")
   {
       if(isProd){
-          sh_path = path.join (AppPath ,'/app/app' ,bin);
-          img_path = path.join (AppPath, '/app/app/images', img_name)
+          sh_path = path.join (AppPath ,'/app' ,bin);
+          img_path = path.join (AppPath, '/app/images', img_name)
       }else{
           sh_path = path.join (AppPath, '/renderer/public/' + bin);
           img_path = path.join (AppPath,'/renderer/public/images/' + img_name )
